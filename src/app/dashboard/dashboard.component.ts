@@ -25,7 +25,15 @@ export interface Chart {
 export class DashboardComponent implements AfterViewInit {
 
 	constructor(private openWeatherService: OpenWeatherService){
-		this.openWeatherService.requestMeteo();
+		// this.openWeatherService.requestMeteo();
+		
+		this.openWeatherService.requestMeteo().subscribe((data)=>{
+			console.log(data);
+		  });
+	  
+
+
+
 	}
 
 	ngAfterViewInit() {}
