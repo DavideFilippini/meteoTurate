@@ -20,7 +20,7 @@ export class OpenWeatherService extends BaseService{
 
 
   requestMeteo() {
-    const url = `http://api.openweathermap.org/data/2.5/weather?q=London,uk&appid=03424424d7f3e2caa885fd1db949cf3d`;
+    const url = `http://api.openweathermap.org/data/2.5/weather?q=Turate,it&appid=03424424d7f3e2caa885fd1db949cf3d`;
     let res =  this.httpClient.get(url);
     console.log("res: ",res);
     return res;
