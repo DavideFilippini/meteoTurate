@@ -2,6 +2,9 @@ import { Component, AfterViewInit } from '@angular/core';
 
 import * as Chartist from 'chartist';
 import { ChartType, ChartEvent } from 'ng-chartist';
+import {OpenWeatherService} from '../services/open-weather.service'
+
+
 declare var require: any;
 
 const data= require('./data.json');
@@ -20,6 +23,11 @@ export interface Chart {
 	styleUrls: ['./dashboard.component.scss']
 })
 export class DashboardComponent implements AfterViewInit {
+
+	constructor(private openWeatherService: OpenWeatherService){
+		this.openWeatherService.requestMeteo();
+	}
+
 	ngAfterViewInit() {}
 
 	// Barchart
