@@ -9,6 +9,10 @@ declare var require: any;
 
 const data= require('./data.json');
 
+
+
+
+
 export interface Chart {
 	type: ChartType;
 	data: Chartist.IChartistData;
@@ -22,19 +26,29 @@ export interface Chart {
 	templateUrl: './dashboard.component.html',
 	styleUrls: ['./dashboard.component.scss']
 })
+
+
+
 export class DashboardComponent implements AfterViewInit {
+
+nowTemperature: number = 0;
+feelsLikeTemperature: number = 0;
 
 	constructor(private openWeatherService: OpenWeatherService){
 		// this.openWeatherService.requestMeteo();
-		
+
 		this.openWeatherService.requestMeteo().subscribe((data)=>{
 			console.log(data);
+
+let mainData = (data as any).main;
+			this.nowTemperature = mainData.temp;
+			this.feelsLikeTemperature = mainData.feels_like;
+			console.log("TEMP: ",this.nowTemperature);
+
+
 		  });
-	  
-
-
-
 	}
+
 
 	ngAfterViewInit() {}
 
