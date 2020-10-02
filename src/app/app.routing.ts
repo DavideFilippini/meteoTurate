@@ -13,18 +13,19 @@ export const AppRoutes: Routes = [
         pathMatch: 'full'
       },
 
+
       {
         path: '',
         loadChildren:
           () => import('./material-component/material.module').then(m => m.MaterialComponentsModule)
       },
       {
-        path: '/dashboard',
+        path: 'dashboard',
         loadChildren: () => import('./dashboard/dashboard.module').then(m => m.DashboardModule)
       },
+      { path: '404', redirectTo: '' },
+      { path: '**', redirectTo: '' },
 
-      { path: '404', redirectTo: '/dashboard' },
-      { path: '**', redirectTo: '/dashboard' }
 
     ]
   }
