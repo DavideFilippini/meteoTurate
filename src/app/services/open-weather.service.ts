@@ -20,8 +20,10 @@ export class OpenWeatherService extends BaseService{
     let res =  this.http.get(url);
     console.log("res: ",res);
     return res;
-
   }
+
+
+  
 
 
 

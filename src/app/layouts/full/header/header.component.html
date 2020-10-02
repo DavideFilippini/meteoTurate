@@ -2,8 +2,13 @@
 <!-- ============================================================== -->
 <!-- Profile - style you can find in header.scss -->
 <!-- ============================================================== -->
-<a href="http_//meteoturate.it" class=" m-r-20 hidden-sm-up" mat-raised-button color="warn">Iscriviti</a>
-<button [matMenuTriggerFor]="profile" mat-icon-button class="m-r-5"> <img src="assets/icon/noUser.jpg" alt="user" class="profile-pic"> </button>
+
+<button class=" m-r-20 hidden-sm-up" mat-raised-button color="warn" matTooltip="Non ancora disponibile" matTooltipPosition="above" (click)="openNotAvaiableWindow()">  Iscriviti </button>
+
+<!-- <a href="http_//meteoturate.it"  mat-raised-button color="warn"></a> -->
+<button [matMenuTriggerFor]="profile"   mat-icon-button class="m-r-5"> <img src="assets/icon/noUser.jpg" alt="user" class="profile-pic"> </button>
+
+
 <mat-menu #profile="matMenu" class="mymegamenu">
     <button mat-menu-item>
         <mat-icon>settings</mat-icon> Settings </button>

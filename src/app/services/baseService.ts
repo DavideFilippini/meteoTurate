@@ -13,7 +13,7 @@ import {Inject, Injectable} from "@angular/core";
 @Injectable()
 export class BaseService {
 http: HttpClient;
-// apiLocation = environment.baseUrl + environment.versionUrl;
+//  apiLocation = environment.baseUrl + environment.versionUrl;
 
 constructor(
 @Inject(HttpClient) http: HttpClient,

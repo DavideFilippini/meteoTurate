@@ -5,4 +5,15 @@ import { Component } from '@angular/core';
   templateUrl: './header.component.html',
   styleUrls: []
 })
-export class AppHeaderComponent {}
+export class AppHeaderComponent {
+
+
+  openNotAvaiableWindow(){
+
+    console.log("QUI METTO POPUP")
+
+  }
+
+
+
+}
