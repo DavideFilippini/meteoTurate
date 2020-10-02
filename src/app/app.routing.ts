@@ -23,8 +23,8 @@ export const AppRoutes: Routes = [
         path: 'dashboard',
         loadChildren: () => import('./dashboard/dashboard.module').then(m => m.DashboardModule)
       },
-      { path: '404', redirectTo: '' },
-      { path: '**', redirectTo: '' },
+      { path: '404', redirectTo: '/dashboard' },
+      { path: '**', redirectTo: '/dashboard' },
 
 
     ]
