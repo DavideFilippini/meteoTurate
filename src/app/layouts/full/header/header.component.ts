@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { MatSnackBar } from '@angular/material';
 
 @Component({
   selector: 'app-header',
@@ -7,13 +8,13 @@ import { Component } from '@angular/core';
 })
 export class AppHeaderComponent {
 
+  constructor(public snackBar: MatSnackBar){}
 
-  openNotAvaiableWindow(){
-
-    console.log("QUI METTO POPUP")
-
+ 
+  openNotAvailableSnackBar(message: string, action: string) {
+    this.snackBar.open(message, action, {
+      duration: 2500,
+    });
   }
-
-
 
 }

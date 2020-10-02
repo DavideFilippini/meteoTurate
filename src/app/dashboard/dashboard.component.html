@@ -15,13 +15,23 @@
         <div class="message-box contact-box p-20">
 
             
-            <div class="message-widget contact-widget">
+            <div class="message-widget contact-widget center">
+
+                <a href="#">
+                   <div >
+                    <img src=" http://openweathermap.org/img/wn/09d@2x.png" alt="user" style="padding-left: 25px;">
+                   </div>
+                </a>
+               
+               
+
+
                 <!-- Message -->
                 <a href="#">
                     <div class="user-img"> <img src="assets/icon/termometro.jpg" alt="user"
                             class="img-circle"> <span class="profile-status online pull-right"></span> </div>
                     <div class="mail-contnet">
-                        <h5>Temperatura:</h5> <span class="mail-desc">{{nowTemperature}}°</span>
+                        <h5>Temperatura</h5> <span class="mail-desc">{{nowTemperature}}°</span>
                     </div>
                 </a>
                 <!-- Message -->
@@ -32,6 +42,24 @@
                         <h5>Percepita</h5> <span class="mail-desc">{{feelsLikeTemperature}}°</span>
                     </div>
                 </a>
+
+                <a href="#">
+                    <div class="user-img"> <img src="assets/icon/humidity.jpg" alt="user"
+                            class="img-circle"> <span class="profile-status busy pull-right"></span> </div>
+                    <div class="mail-contnet">
+                        <h5>Umidità</h5> <span class="mail-desc">{{humidity}}%</span>
+                    </div>
+                </a>
+
+                <a href="#">
+                    <div class="user-img"> <img src="assets/icon/clouds.jpg" alt="user"
+                            class="img-circle"> <span class="profile-status busy pull-right"></span> </div>
+                    <div class="mail-contnet">
+                        <h5>Nuvole</h5> <span class="mail-desc">{{clouds}}%</span>
+                    </div>
+                </a>
+
+                
                 <!-- Message -->
                 <!-- <a href="#">
                     <div class="user-img"> <span class="round">A</span> <span

@@ -33,7 +33,8 @@ export class DashboardComponent implements AfterViewInit {
 
 nowTemperature: number = 0;
 feelsLikeTemperature: number = 0;
-
+humidity: number =0;
+clouds: number =0;
 	constructor(private openWeatherService: OpenWeatherService){
 		// this.openWeatherService.requestMeteo();
 
@@ -43,6 +44,8 @@ feelsLikeTemperature: number = 0;
 let mainData = (data as any).main;
 			this.nowTemperature = mainData.temp;
 			this.feelsLikeTemperature = mainData.feels_like;
+			this.humidity = mainData.humidity;
+			this.clouds =  (data as any).clouds.all;
 			console.log("TEMP: ",this.nowTemperature);
 
 
