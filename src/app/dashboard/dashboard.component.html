@@ -9,10 +9,6 @@
     <h4 class="card-title text-white m-0">Valori attuali</h4>
     <h6 class="card-subtitle text-white m-0 op-5">aggiornati ogni 5 minuti</h6>
     <!-- <button mat-mini-fab color="accent" class="add-contact">+</button> -->
-
-
-
-
     <!-- <div class="message-widget contact-widget center" style="background-color: white;">
         <a href="#">
             <div>
@@ -204,36 +200,22 @@
         <!-- column -->
     </div>
 
-
     <div class="row">
-
         <div style="min-width: 100%;">
-
-
-
-
-
-
-
-
-
-
-            <mat-card class="oh text-center little-profile">
-                <img mat-card-image src="assets/images/background/profile-bg.jpg" alt="Photo of a Shiba Inu">
-                <mat-card-content>
-
-                    <table>
+            <mat-card>
+                <mat-card-content >
+                    <table class="responsive-table centered" style="min-width: 100%;">
                         <thead>
                             <tr>
                                 <th>Giorno</th>
+                                <th>TMax</th>
                                 <th>Tmin</th>
-                                <th>Tmax</th>
                                 <th>humidity</th>
 
                             </tr>
                         </thead>
 
-                        <tbody>
+                        <tbody class="centered">
                             <tr *ngFor="let day of prevision">
                                 <td>{{convertDtInDate(day.dt)}}</td>
                                 <td>{{day.temp.max}}°</td>
@@ -245,59 +227,12 @@
                     </table>
 
 
-
-
-
-
-
-
-
-
-
-                    <!-- <div class="pro-img">
-                            <img src="assets/images/users/4.jpg" width="100" alt="user" class="img-circle">
-                        </div> -->
-                    <h3 class="m-b-0">Meteo Turate</h3>
-                    <!-- <h6 class="m-t-0 ">Web Designer &amp; Developer</h6> -->
-                    <!-- <mat-card-actions>
-                            <button mat-raised-button color="warn">Follow</button>
-                        </mat-card-actions> -->
-                    <div fxLayout="row" fxLayoutWrap="wrap" class="m-t-30">
-                        <div fxFlex.gt-sm="33.33%" fxFlex.gt-xs="33.33%" fxFlex="100">
-                            <h3 class="m-0 font-light">1099</h3>
-                            <small>test</small>
-                        </div>
-                        <div fxFlex.gt-sm="33.33%" fxFlex.gt-xs="33.33%" fxFlex="100">
-                            <h3 class="m-0 font-light">test</h3>
-                            <small>test</small>
-                        </div>
-                        <div fxFlex.gt-sm="33.33%" fxFlex.gt-xs="33.33%" fxFlex="100">
-                            <h3 class="m-0 font-light">test</h3>
-                            <small>test</small>
-                        </div>
-                    </div>
-
-
-
-
-
                 </mat-card-content>
             </mat-card>
         </div>
 
 
-
-
-
-        <!-- Card column -->
-        <!-- Card column -->
-
     </div>
 
 
 </div>
-
-
-<!-- ============================================================== -->
-<!-- Image Card row-->
-<!-- ============================================================== -->
