@@ -35,6 +35,9 @@ export class DashboardComponent implements AfterViewInit {
 	feelsLikeTemperature: number = 0;
 	humidity: number = 0;
 	clouds: number = 0;
+
+	prevision: any;
+
 	constructor(private openWeatherService: OpenWeatherService) {
 		// this.openWeatherService.requestMeteo();
 
@@ -51,10 +54,21 @@ export class DashboardComponent implements AfterViewInit {
 		});
 
 		this.openWeatherService.prevision().subscribe((data) => {
-			console.log("prevision: ",data);
+			console.log("prevision: ", data);
+			this.prevision = (data as any).daily;
 
 		});
 
+
+	}
+
+
+	convertDtInDate(dt: number): any {
+
+		var timestamp = dt;
+		var date = new Date(timestamp * 1000);
+		var iso = date.toISOString().match(/(\d{2}\-\d{2})T(\d{2}:\d{2}:\d{2})/)
+		return (iso ? iso[1] : "--");
 
 	}
 
