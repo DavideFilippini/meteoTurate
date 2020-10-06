@@ -57,7 +57,7 @@ export class DashboardComponent implements AfterViewInit {
 			console.log("prevision: ", data);
 			this.prevision = (data as any).daily;
 
-		});
+		});  
 
 
 	}

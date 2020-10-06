@@ -27,8 +27,8 @@
 
     <div class="message-widget contact-widget center" fxFlex="20%">
         <a href="#">
-            <div class="user-img"> <img src="assets/icon/termometro.jpg" alt="user" class="img-circle">
-                <span class="profile-status online pull-right"></span> </div>
+            <div class="user-img"> <img src="assets/icon/thermometer.png" alt="user" class="img-circle">
+            </div>
             <div class="mail-contnet" style="font-size: 1vw">
                 <span>Temperatura</span> <span class="mail-desc">{{nowTemperature}}°</span>
             </div>
@@ -38,8 +38,8 @@
 
     <div class="message-widget contact-widget center" fxFlex="20%">
         <a href="#">
-            <div class="user-img"> <img src="assets/icon/termometro.jpg" alt="user" class="img-circle">
-                <span class="profile-status busy pull-right"></span> </div>
+            <div class="user-img"> <img src="assets/icon/thermometer.png" alt="user" class="img-circle">
+            </div>
             <div class="mail-contnet" style="font-size: 1vw">
                 <span>Percepita</span> <span class="mail-desc">{{feelsLikeTemperature}}°</span>
             </div>
@@ -50,8 +50,7 @@
 
     <div class="message-widget contact-widget center" fxFlex="20%">
         <a href="#">
-            <div class="user-img"> <img src="assets/icon/humidity.jpg" alt="user" class="img-circle"> <span
-                    class="profile-status busy pull-right"></span> </div>
+            <div class="user-img"> <img src="assets/icon/humidity.png" alt="user" class="img-circle"> </div>
             <div class="mail-contnet" style="font-size: 1vw">
                 <span>Umidità</span> <span class="mail-desc">{{humidity}}%</span>
             </div>
@@ -63,8 +62,7 @@
     <div class="message-widget contact-widget center" fxFlex="20%">
 
         <a href="#">
-            <div class="user-img"> <img src="assets/icon/clouds.jpg" alt="user" class="img-circle"> <span
-                    class="profile-status busy pull-right"></span> </div>
+            <div class="user-img"> <img src="assets/icon/clouds.png" alt="user" class="img-circle"> </div>
             <div class="mail-contnet" style="font-size: 1vw">
                 <span>Nuvole</span> <span class="mail-desc">{{clouds}}%</span>
             </div>
@@ -94,34 +92,8 @@
                                 style="padding-left: 25px;">
                         </div>
                     </a>
-                    <a href="#">
-                        <div class="user-img"> <img src="assets/icon/termometro.jpg" alt="user" class="img-circle">
-                            <span class="profile-status online pull-right"></span> </div>
-                        <div class="mail-contnet">
-                            <h5>Temperatura</h5> <span class="mail-desc">{{nowTemperature}}°</span>
-                        </div>
-                    </a>
-                    <a href="#">
-                        <div class="user-img"> <img src="assets/icon/termometro.jpg" alt="user" class="img-circle">
-                            <span class="profile-status busy pull-right"></span> </div>
-                        <div class="mail-contnet">
-                            <h5>Percepita</h5> <span class="mail-desc">{{feelsLikeTemperature}}°</span>
-                        </div>
-                    </a>
-                    <a href="#">
-                        <div class="user-img"> <img src="assets/icon/humidity.jpg" alt="user" class="img-circle"> <span
-                                class="profile-status busy pull-right"></span> </div>
-                        <div class="mail-contnet">
-                            <h5>Umidità</h5> <span class="mail-desc">{{humidity}}%</span>
-                        </div>
-                    </a>
-                    <a href="#">
-                        <div class="user-img"> <img src="assets/icon/clouds.jpg" alt="user" class="img-circle"> <span
-                                class="profile-status busy pull-right"></span> </div>
-                        <div class="mail-contnet">
-                            <h5>Nuvole</h5> <span class="mail-desc">{{clouds}}%</span>
-                        </div>
-                    </a>
+                   
+                  
                 </div>
             </div>
         </mat-card> -->
@@ -203,24 +175,29 @@
     <div class="row">
         <div style="min-width: 100%;">
             <mat-card>
-                <mat-card-content >
-                    <table class="responsive-table centered" style="min-width: 100%;">
+                <mat-card-content>
+                    <table class="responsive-table center" style="min-width: 100%;">
                         <thead>
                             <tr>
                                 <th>Giorno</th>
+                                <th></th>
                                 <th>TMax</th>
                                 <th>Tmin</th>
-                                <th>humidity</th>
-
+                                <th>Umidità</th>
                             </tr>
                         </thead>
 
-                        <tbody class="centered">
+                        <tbody style="text-align:center">
                             <tr *ngFor="let day of prevision">
                                 <td>{{convertDtInDate(day.dt)}}</td>
+                                <td>
+                                    <img src='assets/meteoIcon/{{day.weather[0].main}}.png'
+                                        alt="{{day.weather[0].main}}" class="img-circle previsionIcon">
+                                </td>
                                 <td>{{day.temp.max}}°</td>
                                 <td>{{day.temp.min}}°</td>
                                 <td>{{day.humidity}}%</td>
+
                             </tr>
 
                         </tbody>
