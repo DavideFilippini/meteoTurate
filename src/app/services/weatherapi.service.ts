@@ -7,24 +7,21 @@ import "rxjs/add/operator/map";
 @Injectable({
   providedIn: "root",
 })
-export class OpenWeatherService extends BaseService {
-  private openweathermapKey: string = "03424424d7f3e2caa885fd1db949cf3d";
+export class WeatherapiService extends BaseService {
+  private openweathermapKey: string = "a800bf61abdc454795984028222605";
   // constructor(){
   //   super(httpClient)
   // }
 
   requestMeteo() {
-    const url =
-      `http://api.openweathermap.org/data/2.5/weather?q=Turate,it&units=metric&appid=` +
-      this.openweathermapKey;
+    const url = `http://api.weatherapi.com/v1/forecast.json?key=a800bf61abdc454795984028222605&q=45.65509445938792,9.00179612723911&days=5&aqi=yes&alerts=yes&lang=it`;
     let res = this.http.get(url);
     return res;
   }
 
   prevision() {
     const url =
-      "https://api.openweathermap.org/data/2.5/onecall?lat=45.6582&lon=9.0053&exclude=hourly&units=metric&appid=" +
-      this.openweathermapKey;
+      "http://api.weatherapi.com/v1/current.json?key=a800bf61abdc454795984028222605&q=45.65509445938792,9.00179612723911&aqi=yes&lang=it";
     let res = this.http.get(url);
     return res;
   }

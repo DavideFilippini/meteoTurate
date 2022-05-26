@@ -1,28 +1,37 @@
-import { Routes } from '@angular/router';
+import { Routes } from "@angular/router";
 
-import { FullComponent } from './layouts/full/full.component';
+import { FullComponent } from "./layouts/full/full.component";
 
 export const AppRoutes: Routes = [
   {
-    path: '',
+    path: "",
     component: FullComponent,
     children: [
+      // {
+      //   path: "",
+      //   redirectTo: "/dashboard",
+      //   pathMatch: "full",
+      // },
+      // {
+      //   path: "dashboard",
+      //   loadChildren: () =>
+      //     import("./dashboard/dashboard.module").then((m) => m.DashboardModule),
+      // },
+
       {
-        path: '',
-        redirectTo: '/dashboard',
-        pathMatch: 'full'
-      },
-     
-      {
-        path: '',
-        loadChildren:
-          () => import('./material-component/material.module').then(m => m.MaterialComponentsModule)
+        path: "",
+        pathMatch: "full",
+        redirectTo: "dashboard",
+        // loadChildren: () =>
+        //   import("./material-component/material.module").then(
+        //     (m) => m.MaterialComponentsModule
+        //   ),
       },
       {
-        path: 'dashboard',
-        loadChildren: () => import('./dashboard/dashboard.module').then(m => m.DashboardModule)
+        path: "dashboard",
+        loadChildren: () =>
+          import("./dashboard/dashboard.module").then((m) => m.DashboardModule),
       },
-  
-    ]
-  }
+    ],
+  },
 ];
