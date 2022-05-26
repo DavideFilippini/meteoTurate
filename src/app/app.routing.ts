@@ -20,18 +20,14 @@ export const AppRoutes: Routes = [
 
       {
         path: "",
-        pathMatch: "full",
-        redirectTo: "dashboard",
-        // loadChildren: () =>
-        //   import("./material-component/material.module").then(
-        //     (m) => m.MaterialComponentsModule
-        //   ),
-      },
-      {
-        path: "dashboard",
         loadChildren: () =>
           import("./dashboard/dashboard.module").then((m) => m.DashboardModule),
       },
+      // {
+      //   path: "dashboard",
+      //   loadChildren: () =>
+      //     import("./dashboard/dashboard.module").then((m) => m.DashboardModule),
+      // },
     ],
   },
 ];
