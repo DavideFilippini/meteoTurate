@@ -1,24 +1,24 @@
+import { BrowserModule } from "@angular/platform-browser";
+import { NgModule } from "@angular/core";
+import { RouterModule } from "@angular/router";
+import { FormsModule } from "@angular/forms";
+import { HttpClientModule, HttpClient } from "@angular/common/http";
+import { LocationStrategy, PathLocationStrategy } from "@angular/common";
+import { AppRoutes } from "./app.routing";
+import { AppComponent } from "./app.component";
 
-import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
-import { RouterModule } from '@angular/router';
-import { FormsModule } from '@angular/forms';
-import { HttpClientModule, HttpClient } from '@angular/common/http';
-import { LocationStrategy, PathLocationStrategy } from '@angular/common';
-import { AppRoutes } from './app.routing';
-import { AppComponent } from './app.component';
+import { FlexLayoutModule } from "@angular/flex-layout";
+import { FullComponent } from "./layouts/full/full.component";
+import { AppHeaderComponent } from "./layouts/full/header/header.component";
+import { AppSidebarComponent } from "./layouts/full/sidebar/sidebar.component";
+import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
+import { DemoMaterialModule } from "./demo-material-module";
 
-import { FlexLayoutModule } from '@angular/flex-layout';
-import { FullComponent } from './layouts/full/full.component';
-import { AppHeaderComponent } from './layouts/full/header/header.component';
-import { AppSidebarComponent } from './layouts/full/sidebar/sidebar.component';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { DemoMaterialModule } from './demo-material-module';
-
-import { SharedModule } from './shared/shared.module';
-import { SpinnerComponent } from './shared/spinner.component';
-
-
+import { SharedModule } from "./shared/shared.module";
+import { SpinnerComponent } from "./shared/spinner.component";
+import { StoricoRoutes } from "./pages/storico/storico.routing";
+import { StoricoModule } from "./pages/storico/storico.module";
+import { StoricoComponent } from "./pages/storico/storico.component";
 
 @NgModule({
   declarations: [
@@ -26,7 +26,7 @@ import { SpinnerComponent } from './shared/spinner.component';
     FullComponent,
     AppHeaderComponent,
     SpinnerComponent,
-    AppSidebarComponent
+    AppSidebarComponent,
   ],
   imports: [
     BrowserModule,
@@ -36,14 +36,15 @@ import { SpinnerComponent } from './shared/spinner.component';
     FlexLayoutModule,
     HttpClientModule,
     SharedModule,
-    RouterModule.forRoot(AppRoutes)
+    RouterModule.forRoot(AppRoutes),
+    StoricoModule,
   ],
   providers: [
     {
       provide: LocationStrategy,
-      useClass: PathLocationStrategy
-    }
+      useClass: PathLocationStrategy,
+    },
   ],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
 export class AppModule {}

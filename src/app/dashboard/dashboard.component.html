@@ -85,7 +85,7 @@
 
 <!-- #REGION OPENWHEATHER TABLE -->
 
-<div class="container">
+<!-- <div class="container">
   <div class="row">
     <div style="min-width: 100%">
       <mat-card>
@@ -100,6 +100,7 @@
                 <th>Tmin</th>
                 <th>Umidità</th>
               </tr>
+              da
             </thead>
 
             <tbody style="text-align: center">
@@ -124,7 +125,7 @@
       </mat-card>
     </div>
   </div>
-</div>
+</div> -->
 <!-- #ENDREGION OPENWHEATHER TABLE -->
 
 <div class="container" *ngIf="previsionWeatherApiService">
@@ -138,8 +139,7 @@
                 <th></th>
                 <th>Giorno</th>
                 <th></th>
-                <th>TMax</th>
-                <th>Tmin</th>
+                <th>TMax - Tmin</th>
                 <th>Umidità</th>
               </tr>
             </thead>
@@ -158,8 +158,7 @@
 
                 <td>{{ day.day.condition.text }}</td>
 
-                <td>{{ day.day.maxtemp_c }}°</td>
-                <td>{{ day.day.mintemp_c }}°</td>
+                <td>{{ day.day.maxtemp_c }}° - {{ day.day.mintemp_c }}°</td>
                 <td>{{ day.day.avghumidity }}%</td>
               </tr>
             </tbody>

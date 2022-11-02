@@ -14,7 +14,7 @@ export class WeatherapiService extends BaseService {
   // }
 
   requestMeteo() {
-    const url = `http://api.weatherapi.com/v1/forecast.json?key=a800bf61abdc454795984028222605&q=45.65509445938792,9.00179612723911&days=5&aqi=yes&alerts=yes&lang=it`;
+    const url = `http://api.weatherapi.com/v1/forecast.json?key=a800bf61abdc454795984028222605&q=45.65509445938792,9.00179612723911&days=15&aqi=yes&alerts=yes&lang=it`;
     let res = this.http.get(url);
     return res;
   }

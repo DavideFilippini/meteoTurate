@@ -32,21 +32,21 @@ export class DashboardComponent implements AfterViewInit {
   currentForecast: any = {};
 
   constructor(
-    private openWeatherService: OpenWeatherService,
+    // private openWeatherService: OpenWeatherService,
     private weatherapiService: WeatherapiService
   ) {
-    this.openWeatherService.requestMeteo().subscribe((data) => {
-      let mainData = (data as any).main;
-      this.feelsLikeTemperature = mainData.feels_like;
-    });
+    // this.openWeatherService.requestMeteo().subscribe((data) => {
+    //   let mainData = (data as any).main;
+    //   this.feelsLikeTemperature = mainData.feels_like;
+    // });
 
-    this.openWeatherService.prevision().subscribe((data) => {
-      this.prevision = (data as any).daily;
+    // this.openWeatherService.prevision().subscribe((data) => {
+    //   this.prevision = (data as any).daily;
 
-      this.prevision.forEach((elem: { date: any; dt: number }) => {
-        elem.date = this.convertDtInDate(elem.dt);
-      });
-    });
+    //   this.prevision.forEach((elem: { date: any; dt: number }) => {
+    //     elem.date = this.convertDtInDate(elem.dt);
+    //   });
+    // });
 
     this.weatherapiService.requestMeteo().subscribe((data) => {
       console.log("requestMeteo weatherapiService: ", data);

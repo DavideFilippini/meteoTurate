@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { Injectable } from "@angular/core";
 
 export interface Menu {
   state: string;
@@ -8,7 +8,9 @@ export interface Menu {
 }
 
 const MENUITEMS = [
-  { state: 'dashboard', name: 'Dashboard', type: 'link', icon: 'av_timer' },
+  { state: "/", name: "Dashboard", type: "link", icon: "av_timer" },
+  { state: "storico", name: "Storico", type: "link", icon: "av_timer" },
+
   // { state: 'button', type: 'link', name: 'Buttons', icon: 'crop_7_5' },
   // { state: 'grid', type: 'link', name: 'Grid List', icon: 'view_comfy' },
   // { state: 'lists', type: 'link', name: 'Lists', icon: 'view_list' },
@@ -21,7 +23,7 @@ const MENUITEMS = [
   //   name: 'Expansion Panel',
   //   icon: 'vertical_align_center'
   // },
-  // { state: 'chips', type: 'link', name: 'Chips', icon: 'vignette' },
+  // { state: "chips", type: "link", name: "Chips", icon: "vignette" },
   // { state: 'toolbar', type: 'link', name: 'Toolbar', icon: 'voicemail' },
   // {
   //   state: 'progress-snipper',

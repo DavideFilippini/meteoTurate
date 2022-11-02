@@ -23,6 +23,11 @@ export const AppRoutes: Routes = [
         loadChildren: () =>
           import("./dashboard/dashboard.module").then((m) => m.DashboardModule),
       },
+      {
+        path: "storico",
+        loadChildren: () =>
+          import("./pages/storico/storico.module").then((m) => m.StoricoModule),
+      },
       // {
       //   path: "dashboard",
       //   loadChildren: () =>
